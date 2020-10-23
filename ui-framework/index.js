@@ -1,10 +1,14 @@
-export function createElement(tag, text, parentHtmlElement, cssClass) {
+export function createElement(tag, text, parentHtmlElement, cssClass = null) {
     const element = document.createElement(tag);
     element.textContent = text;
     parentHtmlElement.appendChild(element);
-    cssClass = '';
     
+    if (cssClass) {
+        element.classList.add(cssClass)
+    }
+
     return element;
+ 
 }
 
 /*Warum brauchen wir in der index.js in ui-framework das createElement?

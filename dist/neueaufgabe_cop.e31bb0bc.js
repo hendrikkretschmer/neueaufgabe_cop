@@ -126,9 +126,15 @@ Object.defineProperty(exports, "__esModule", {
 exports.createElement = createElement;
 
 function createElement(tag, text, parentHtmlElement) {
+  var cssClass = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
   var element = document.createElement(tag);
   element.textContent = text;
   parentHtmlElement.appendChild(element);
+
+  if (cssClass) {
+    element.classList.add(cssClass);
+  }
+
   return element;
 }
 /*Warum brauchen wir in der index.js in ui-framework das createElement?
@@ -186,8 +192,10 @@ var _uiFramework = require("../ui-framework");
 function Codebuddy() {
   var unorderedlist = (0, _uiFramework.createElement)("ul", " ", document.body);
   var list = (0, _uiFramework.createElement)("li", "Vorname, Nachname", unorderedlist);
+  list.classList.add('codebuddy_listitem');
   var plusicon = (0, _uiFramework.createElement)("img", " ", unorderedlist);
   var list2 = (0, _uiFramework.createElement)("li", "Vorname, Nachname", unorderedlist);
+  list2.classList.add('codebuddy_listitem2');
 }
 },{"../ui-framework":"ui-framework/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
@@ -228,7 +236,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60598" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61188" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

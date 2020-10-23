@@ -1,1 +1,1 @@
-{"version":3,"sources":["CSS/main.css"],"names":[],"mappings":"AAAA","file":"main.8887fe77.css","sourceRoot":"..","sourcesContent":[""]}
+{"version":3,"sources":["CSS/codebuddy.css"],"names":[],"mappings":"AAAA;AACA;AACA","file":"main.8887fe77.css","sourceRoot":"..","sourcesContent":[".codebuddy_listitem {\n    background-color: black;\n}"]}
