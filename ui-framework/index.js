@@ -1,7 +1,8 @@
-export function createElement(tag, text, parentHtmlElement) {
-    const element = document.createElement("tag");
+export function createElement(tag, text, parentHtmlElement, cssClass) {
+    const element = document.createElement(tag);
     element.textContent = text;
     parentHtmlElement.appendChild(element);
+    cssClass = '';
     
     return element;
 }

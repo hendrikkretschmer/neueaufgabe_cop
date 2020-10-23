@@ -126,7 +126,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.createElement = createElement;
 
 function createElement(tag, text, parentHtmlElement) {
-  var element = document.createElement("tag");
+  var element = document.createElement(tag);
   element.textContent = text;
   parentHtmlElement.appendChild(element);
   return element;
@@ -173,15 +173,34 @@ function Header() {
 }
 /* Wir erstellen einen Header und rufen die Funktion createElement auf, die aus drei Parametern besteht, 
 die wir brauchen, um den Header zu bauen (Was beinhaltet der Header?)*/
+},{"../ui-framework":"ui-framework/index.js"}],"components/Codebuddy.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Codebuddy;
+
+var _uiFramework = require("../ui-framework");
+
+function Codebuddy() {
+  var unorderedlist = (0, _uiFramework.createElement)("ul", " ", document.body);
+  var list = (0, _uiFramework.createElement)("li", "Vorname, Nachname", unorderedlist);
+  var plusicon = (0, _uiFramework.createElement)("img", " ", unorderedlist);
+  var list2 = (0, _uiFramework.createElement)("li", "Vorname, Nachname", unorderedlist);
+}
 },{"../ui-framework":"ui-framework/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _Header = _interopRequireDefault(require("./components/Header"));
 
+var _Codebuddy = _interopRequireDefault(require("./components/Codebuddy"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _Header.default)();
-},{"./components/Header":"components/Header.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _Codebuddy.default)();
+},{"./components/Header":"components/Header.js","./components/Codebuddy":"components/Codebuddy.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -209,7 +228,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60354" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60598" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
